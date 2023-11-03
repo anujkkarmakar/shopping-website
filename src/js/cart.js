@@ -10,7 +10,11 @@ let generateBill = () => {
             let search = shopItems.find((y) => y.id === id) || [];
             return item * search.price;
         }).reduce((x,y) => x+y, 0);
-        console.log(amount);
+        label.innerHTML = `
+        <h2>Total Bill: $ ${amount}</h2>
+        <button class="back-button checkout-button">Checkout</button>
+        <button onclick="removeAll()" class="back-button clear-cart-button">Clear Cart</button>
+        `;
     }
     else return;
 };
@@ -122,4 +126,10 @@ let remove = (id) => {
     basket = basket.filter((x) => x.id !== selectedItem.id);
     generateCartItems();
     localStorage.setItem("shopItem", JSON.stringify(basket));
+};
+
+let removeAll = () => {
+    basket = [];
+    localStorage.setItem("shopItem", JSON.stringify(basket));
+    generateCartItems();
 };
