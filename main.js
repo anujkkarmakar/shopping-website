@@ -53,11 +53,12 @@ let decrement = (id) => {
 
     if (search === undefined) {
         return;
+    } else if(search.item === 0) {
+        return;
     } else {
         search.item -= 1;
         update(selectedItem.id);
-        if(search.item === 0)
-            basket.pop(id = search.id);
+        basket = basket.filter((x) => x.item !== 0);
     }
     localStorage.setItem("shopItem", JSON.stringify(basket));
 

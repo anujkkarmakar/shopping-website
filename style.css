@@ -139,3 +139,53 @@ a {
     cursor: pointer;
     margin-top: 10px;
 }
+
+.bi-x-lg {
+    color: red;
+    font-weight: bold;
+}
+
+/**
+* ! style rules for shopping cart
+*/
+
+.shopping-cart {
+    display: grid;
+    grid-template-columns: repeat(1, 420px);
+    justify-content: center;
+    gap: 15px;
+}
+
+.details {
+    justify-content: space-between;
+}
+
+/**
+* ! style rules for cart item
+*/
+
+.cart-item {
+    border: 2px solid #212529;
+    border-radius: 5px;
+    display: flex;
+}
+
+.title-price-x {
+    width: 195px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.title-price {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.cart-item-price {
+    background-color: #212529;
+    color: white;
+    padding: 3px 6px;
+    border-radius: 2px;
+}
